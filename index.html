@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OW Floricultura: Soluções Sustentáveis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&family=Oswald:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="imagens/favicon.png" type="image/png">
+    <style>
+        /* Estilos CSS Incorporados */
+        :root {
+            /* Variáveis para o modo claro (temática verde natural aprimorada) */
+            --primary-color: #5E8C6A; /* Verde floresta rico */
+            --secondary-color: #A9D18E; /* Verde claro suave (antigo primário) */
+            --accent-color: #C0D684; /* Verde limão vibrante para destaques */
+            --text-color-dark: #333333; /* Cinza escuro para texto principal, mas para header/footer será fixo */
+            --text-color-light: #f9f9f9; /* Branco suave para texto claro */
+            --bg-light: #F0FFF0; /* Verde muito claro, quase branco (Mint Cream) */
+            --bg-dark: #386641; /* Verde escuro para modo escuro */
+            --border-color: #D3E4CD; /* Borda verde suave */
+            --card-bg: #FFFFFF; /* Fundo dos cards branco puro para destaque */
+            --form-bg: #F5FFFA; /* Fundo de formulários (branco acinzentado claro) */
+            --input-bg: #FFFFFF; /* Fundo de inputs (branco) */
+            --box-shadow-color: rgba(0,0,0,0.08); /* Sombra suave */
+            --header-shadow-color-light: rgba(0,0,0,0.15); /* Sombra mais pronunciada para o cabeçalho no modo claro */
+            --header-shadow-color-dark: rgba(0,0,0,0.4); /* Sombra mais pronunciada para o cabeçalho no modo escuro */
+            --service-item-bg: #FFFFFF;
+            --contact-info-bg: #FFFFFF;
+
+
+            --font-heading: 'Playfair Display', serif; /* Fonte elegante para títulos */
+            --font-body: 'Lato', sans-serif; /* Fonte limpa para corpo do texto */
+            --font-logo: 'Oswald', sans-serif; /* Fonte quadrada e moderna para a logo */
+            --font-accent: 'Dancing Script', cursive; /* Fonte cursiva para toques especiais (opcional) */
+
+
+            /* Variáveis para transições */
+            --transition-duration: 0.8s; /* Mais lento e suave */
+            --transition-timing-function: ease-in-out; /* Curva mais suave */
+        }
+
+        /* Variáveis para o modo escuro (tons de verde escuro) */
+        body.dark-mode {
+            --primary-color: #386641; /* Verde escuro como primária */
+            --secondary-color: #6A994E; /* Verde um pouco mais claro */
+            --accent-color: #A7C957; /* Verde claro como destaque */
+            --text-color-dark: #e0e0e0; /* Texto claro padrão para o corpo no dark mode */
+            --text-color-light: #f9f9f9; /* Texto sempre claro no dark mode */
+            --bg-light: #1E3A2B; /* Fundo escuro esverdeado */
+            --bg-dark: #0A110D; /* Fundo mais escuro */
+            --border-color: #4A7856; /* Borda mais escura */
+            --card-bg: #2E4A3A; /* Fundo dos cards no modo escuro */
+            --form-bg: #33543F; /* Fundo de formulários */
+            --box-shadow-color: rgba(0,0,0,0.3);
+            --service-item-bg: #2E4A3A;
+            --contact-info-bg: #2E4A3A;
+            --input-bg: #33543F;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color-dark); /* Cor principal do texto do corpo */
+            background-color: var(--bg-light);
+            background-image: none;
+            transition: background-color var(--transition-duration) var(--transition-timing-function), color var(--transition-duration) var(--transition-timing-function);
+            overflow-x: hidden; /* Evita scroll horizontal indesejado */
+        }
+
+        html {
+            scroll-behavior: smooth; /* Reativa scroll suave para âncoras internas */
+        }
+
+        /* Reset básico para links */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-image: url('imagens/banner2.jpg'); /* Imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 8px 25px var(--header-shadow-color-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background var(--transition-duration) var(--transition-timing-function), box-shadow var(--transition-duration) var(--transition-timing-function), border-color var(--transition-duration) var(--transition-timing-function);
+            position: relative;
+            overflow: hidden;
+            color: #333333; /* Cor do texto no header sempre preta */
+        }
+
+        /* Overlay para o header */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.4); /* Overlay branco suave */
+            z-index: 1;
+            mix-blend-mode: overlay; /* Efeito de mistura */
+        }
+
+        body.dark-mode .header {
+            box-shadow: 0 8px 25px var(--header-shadow-color-dark);
+            border-bottom-color: var(--secondary-color);
+            background-image: url('imagens/banner2.jpg'); /* Mesma imagem para dark mode */
+            color: #333333; /* Cor do texto no dark mode do header sempre preta */
+        }
+
+        body.dark-mode .header::before {
+            background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro suave no dark mode */
+        }
+
+        .header .container {
+            position: relative;
+            z-index: 2; /* Coloca o conteúdo acima do overlay */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: var(--font-logo);
+            font-size: 3em;
+            color: #333333; /* Cor do texto do logo sempre preta */
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra mais suave */
+            transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+            transform: scale(1.02);
+        }
+        /* Garantir que o logo não mude de cor no dark mode */
+        body.dark-mode .logo {
+            color: #333333; /* Cor do texto do logo no dark mode sempre preta */
+        }
+
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 25px;
+        }
+
+        .nav ul li a {
+            color: #333333; /* Links de navegação sempre pretos */
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: all 0.3s ease-in-out;
+            padding-bottom: 7px;
+            border-bottom: 3px solid transparent;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .nav ul li a:hover,
+        .nav ul li a.active {
+            color: var(--primary-color); /* Cor de destaque para hover/ativo */
+            border-bottom-color: var(--primary-color);
+            transform: translateY(-3px);
+            text-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        /* Garantir que os links de navegação não mudem de cor no dark mode */
+        body.dark-mode .nav ul li a {
+            color: #333333; /* Links de navegação no dark mode sempre pretos */
+        }
+        body.dark-mode .nav ul li a:hover,
+        body.dark-mode .nav ul li a.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* Modo Escuro - Toggle */
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #333333; /* Cor do toggle sempre preta */
+            margin-left: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            color: #333333; /* Cor do toggle no dark mode também preta */
+        }
+
+        .dark-mode-toggle:hover {
+            color: var(--accent-color);
+            transform: scale(1.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('imagens/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color-dark);
+            text-align: center;
+            padding: 120px 20px;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+            z-index: 1;
+        }
+
+        body.dark-mode .hero {
+            color: var(--text-color-light);
+        }
+
+        body.dark-mode .hero::before {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 4em;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            color: inherit;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: inherit;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--text-color-light);
+            padding: 16px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all var(--transition-duration) var(--transition-timing-function);
+            font-weight: 700;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px var(--box-shadow-color);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .btn-primary:hover {
+            background-color: #6A994E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px var(--box-shadow-color);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: var(--font-heading);
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 3em;
+            color: var(--text-color-dark);
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        body.dark-mode .section-title {
+            color: var(--text-color-light);
+        }
+
+        body.dark-mode .section-title::after {
+            background-color: var(--accent-color);
+        }
+
+        /* Product Grid */
+        .catalog-overview {
+            padding-top: 80px;
+            margin-top: -80px;
+            margin-bottom: 70px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--box-shadow-color);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px var(--box-shadow-color);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8em;
+            padding: 20px 20px 10px;
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        body.dark-mode .product-card h3 {
+            color: var(--secondary-color);
+        }
+
+        .product-card p {
+            padding: 0 20px 20px;
+            margin: 0;
+            font-size: 1em;
+            color: var(--text-color-dark);
+            flex-grow: 1;
+        }
+
+        body.dark-mode .product-card p {
+            color: var(--text-color-light);
+        }
+
+        .btn-secondary {
+            display: block;
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: var(--text-color-dark);
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 0 0 8px 8px;
+            transition: background-color var(--transition-duration) var(--transition-timing-function), color var(--transition-duration) var(--transition-timing-function);
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9em;
+        }
+
+        .btn-secondary:hover {
+            background-color: #9BBC82;
+            color: var(--text-color-dark);
+        }
+
+        body.dark-mode .btn-secondary {
+            background-color: var(--accent-color);
+            color: var(--text-color-light);
+        }
+
+        body.dark-mode .btn-secondary:hover {
+            background-color: #A7C957;
+            color: var(--text-color-dark);
+        }
+
+        /* Services Section */
+        #servicos {
+            padding-top: 80px;
+            margin-top: -80px;
+            margin-bottom: 70px;
+            background: var(--bg-light);
+        }
+        body.dark-mode #servicos {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 3px 9px var(--box-shadow-color);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: var(--service-item-bg);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px var(--box-shadow-color);
+        }
+
+        .service-item img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+            filter: sepia(10%) saturate(150%) hue-rotate(80deg) brightness(90%) contrast(100%);
+            transition: filter var(--transition-duration) var(--transition-timing-function);
+        }
+
+        body.dark-mode .service-item img {
+            filter: invert(80%) sepia(10%) saturate(120%) hue-rotate(100deg) brightness(100%) contrast(100%);
+        }
+
+        .service-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        body.dark-mode .service-item h3 {
+            color: var(--secondary-color);
+        }
+
+        .service-item p {
+            font-size: 1em;
+            color: var(--text-color-dark);
+        }
+
+        body.dark-mode .service-item p {
+            color: var(--text-color-light);
+        }
+
+        /* About Us Section */
+        #sobre {
+            padding-top: 80px;
+            margin-top: -80px;
+            margin-bottom: 70px;
+            text-align: center;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .about-image {
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--box-shadow-color);
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .about-content p {
+            max-width: 800px;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-color-dark);
+            text-align: justify;
+            padding: 0 15px;
+        }
+
+        body.dark-mode .about-content p {
+            color: var(--text-color-light);
+        }
+
+        /* Projects Section */
+        #projetos {
+            padding-top: 80px;
+            margin-top: -80px; /* Offset for sticky header */
+            margin-bottom: 70px;
+            background: var(--bg-light); /* Consistent background */
+        }
+        body.dark-mode #projetos {
+            background: var(--bg-light); /* Keep consistent */
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--box-shadow-color);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px var(--box-shadow-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px; /* Slightly smaller height for gallery images */
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .gallery-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5em; /* Slightly smaller title for gallery */
+            padding: 15px 20px;
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        body.dark-mode .gallery-item h3 {
+            color: var(--secondary-color);
+        }
+
+
+        /* Contact Section */
+        .contact-section {
+            padding-top: 80px;
+            margin-top: -80px;
+            margin-bottom: 100px; /* Aumentado para mais respiro */
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px; /* Aumentado para mais espaçamento */
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 320px; /* Ajustado para melhor controle */
+            max-width: 480px; /* Ajustado para um pouco maior */
+            background-color: var(--contact-info-bg);
+            padding: 40px; /* Aumentado para mais espaço interno */
+            border-radius: 12px; /* Mais arredondado */
+            box-shadow: 0 6px 20px var(--box-shadow-color); /* Sombra mais pronunciada */
+            transition: background-color var(--transition-duration) var(--transition-timing-function), color var(--transition-duration) var(--transition-timing-function), box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .contact-info:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Sombra no hover */
+        }
+
+        body.dark-mode .contact-info {
+            background-color: var(--contact-info-bg);
+            color: var(--text-color-light);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        body.dark-mode .contact-info:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.05em; /* Levemente maior */
+            color: inherit;
+        }
+
+        .contact-info strong {
+            color: var(--accent-color);
+            font-weight: 700; /* Mais negrito */
+        }
+
+        body.dark-mode .contact-info strong {
+            color: var(--secondary-color);
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 320px; /* Ajustado */
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Aumentado o espaçamento entre os campos */
+        }
+
+        .contact-form input:not([type="submit"]),
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px; /* Mais arredondado */
+            font-family: var(--font-body);
+            font-size: 1em;
+            background-color: var(--input-bg);
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.05); /* Sombra interna sutil */
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            color: var(--text-color-dark);
+        }
+
+        body.dark-mode .contact-form input:not([type="submit"]),
+        body.dark-mode .contact-form textarea {
+            background-color: var(--input-bg);
+            color: var(--text-color-light);
+            border-color: var(--border-color);
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(119, 171, 86, 0.4), 0 2px 8px rgba(0,0,0,0.1); /* Sombra mais refinada no foco */
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--accent-color);
+            color: var(--text-color-light);
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all var(--transition-duration) var(--transition-timing-function);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px var(--box-shadow-color);
+        }
+
+        .contact-form button:hover {
+            background-color: #6A994E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px var(--box-shadow-color);
+        }
+
+        /* Estilos para o botão do WhatsApp */
+        .btn-whatsapp {
+            background-color: #25D366; /* Verde WhatsApp */
+            color: #ffffff; /* Texto branco */
+            padding: 14px 25px; /* Ajuste de padding */
+            text-decoration: none;
+            border-radius: 50px; /* Mais arredondado */
+            transition: all 0.3s ease; /* Transição mais rápida */
+            font-weight: 700;
+            display: inline-flex; /* Para alinhar ícone e texto */
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre ícone e texto */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra mais visível */
+            margin-top: 20px;
+            font-size: 1.05em; /* Fonte um pouco maior */
+            width: 100%; /* Ocupa a largura total */
+            max-width: 300px; /* Limita a largura máxima */
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1DA851; /* Tom mais escuro no hover */
+            transform: translateY(-3px); /* Elevação maior */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Estilos para o Instagram */
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); /* Gradiente Instagram */
+            color: #ffffff; /* Texto branco */
+            padding: 14px 25px; /* Ajuste de padding */
+            text-decoration: none;
+            border-radius: 50px; /* Mais arredondado */
+            transition: all 0.3s ease; /* Transição mais rápida */
+            font-weight: 700;
+            display: inline-flex; /* Para alinhar ícone e texto */
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre ícone e texto */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra mais visível */
+            margin-top: 15px; /* Espaçamento entre os botões */
+            font-size: 1.05em; /* Fonte um pouco maior */
+            width: 100%; /* Ocupa a largura total */
+            max-width: 300px; /* Limita a largura máxima */
+        }
+
+        .btn-instagram:hover {
+            opacity: 0.9; /* Leve opacidade no hover */
+            transform: translateY(-3px); /* Elevação maior */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Estilos para a mensagem de status do formulário */
+        #form-status-message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            opacity: 0;
+            transition: opacity var(--transition-duration) var(--transition-timing-function);
+        }
+
+        #form-status-message.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        #form-status-message.success {
+            background-color: #e6ffe6;
+            color: #1a6d2f;
+            border: 1px solid #a8e6b3;
+        }
+        body.dark-mode #form-status-message.success {
+            background-color: #1a6d2f;
+            color: #e6ffe6;
+            border: 1px solid #6A994E;
+        }
+
+
+        #form-status-message.error {
+            background-color: #ffe6e6;
+            color: #b31a1a;
+            border: 1px solid #e6a8a8;
+        }
+        body.dark-mode #form-status-message.error {
+            background-color: #b31a1a;
+            color: #ffe6e6;
+            border: 1px solid #CD5C5C;
+        }
+
+        /* Google Map */
+        .map-container {
+            margin-top: 25px; /* Espaçamento entre o texto e o mapa */
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Centraliza o mapa */
+        }
+
+        .map-container iframe {
+            width: 100%;
+            max-width: 600px; /* Garante que o mapa não fique muito largo */
+            height: 350px; /* Altura ajustada para o mapa */
+            border-radius: 8px; /* Borda arredondada para o mapa */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra para o mapa */
+        }
+        body.dark-mode .map-container iframe {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+
+        /* Footer */
+        .footer {
+            background-image: url('imagens/banner2.jpg'); /* Imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            color: #333333; /* Texto no footer sempre preta */
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 70px;
+            transition: background var(--transition-duration) var(--transition-timing-function);
+            border-top: 2px solid var(--accent-color);
+            box-shadow: 0 -8px 25px var(--header-shadow-color-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Overlay para o footer */
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.4); /* Overlay branco suave */
+            z-index: 1;
+            mix-blend-mode: overlay; /* Efeito de mistura */
+        }
+
+        body.dark-mode .footer {
+            background-image: url('imagens/banner2.jpg'); /* Mesma imagem para dark mode */
+            color: #333333; /* Texto no dark mode do footer sempre preta */
+            box-shadow: 0 -8px 25px var(--header-shadow-color-dark);
+            border-top-color: var(--secondary-color);
+        }
+        body.dark-mode .footer::before {
+            background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro suave no dark mode */
+        }
+
+        .footer .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            opacity: 0.95;
+            color: #333333; /* Texto do rodapé sempre preta */
+        }
+        body.dark-mode .footer p {
+            color: #333333; /* Garante que o texto do rodapé seja preto no dark mode */
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 12px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .social-links img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Estilos das Páginas de Detalhes (mesmo estilo para todas) */
+        .detail-section {
+            padding: 80px 20px;
+            margin-bottom: 60px;
+            display: none; /* Inicialmente oculto */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-duration) var(--transition-timing-function), transform var(--transition-duration) var(--transition-timing-function);
+            pointer-events: none; /* Desabilita interações quando oculto */
+        }
+
+        .detail-section.active {
+            display: block; /* Torna visível */
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto; /* Habilita interações quando ativo */
+        }
+
+        .detail-content {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .detail-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--box-shadow-color);
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .detail-info {
+            flex: 1.5;
+            min-width: 300px;
+        }
+
+        .detail-info h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        body.dark-mode .detail-info h1 {
+            color: var(--secondary-color);
+        }
+
+        .detail-info p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: var(--text-color-dark);
+            margin-bottom: 25px;
+        }
+
+        body.dark-mode .detail-info p {
+            color: var(--text-color-light);
+        }
+
+        .detail-info ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .detail-info ul li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2377AB56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') no-repeat left center;
+            background-size: 20px;
+            padding-left: 28px;
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: var(--text-color-dark);
+        }
+        body.dark-mode .detail-info ul li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23A7C957" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') no-repeat left center;
+            color: var(--text-color-light);
+        }
+
+
+        /* Botões de navegação de detalhes */
+        .detail-navigation-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .button-group-top,
+        .button-group-bottom {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .button-group-top .btn-primary,
+        .button-group-bottom .btn-primary {
+            flex-grow: 1;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.95em;
+            min-width: 160px;
+        }
+
+        /* Classes para mostrar/esconder seções (controladas por JS) */
+        /* main-content é o container principal para as seções iniciais */
+        .main-content {
+            display: block; /* Por padrão, main-content é visível */
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity var(--transition-duration) var(--transition-timing-function), transform var(--transition-duration) var(--transition-timing-function);
+            pointer-events: auto;
+        }
+
+        /* Quando .main-content está oculto, ele se esconde */
+        .main-content.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+            .section-title {
+                font-size: 2.5em;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            .header {
+                padding: 20px 0;
+            }
+            .footer {
+                padding: 30px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo {
+                margin-bottom: 20px;
+            }
+            .nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+            }
+            .nav ul li {
+                margin: 10px 0;
+            }
+            .hero {
+                padding: 80px 15px;
+                min-height: 350px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+            .product-grid, .services-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .about-content p {
+                text-align: left;
+            }
+            .contact-content {
+                flex-direction: column;
+            }
+            .contact-info, .contact-form {
+                max-width: 100%;
+            }
+            /* Responsividade para detalhes */
+            .detail-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .detail-info h1 {
+                font-size: 2.5em;
+                text-align: center;
+            }
+            .detail-info p, .detail-info ul {
+                text-align: left;
+                padding: 0 10px;
+            }
+            .detail-info ul li {
+                text-align: left;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 90%;
+            }
+            .detail-navigation-buttons {
+                flex-direction: column;
+            }
+            .button-group-top,
+            .button-group-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+            /* Responsividade para os botões de contato */
+            .contact-info .btn-whatsapp, .contact-info .btn-instagram {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .dark-mode-toggle {
+                margin-top: 15px;
+                margin-left: 0;
+            }
+            /* Mapa no modo responsivo */
+            .map-container iframe {
+                height: 250px; /* Ajuste a altura para telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
+            .section-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+            /* Responsividade para detalhes */
+            .detail-info h1 {
+                font-size: 2em;
+            }
+            .logo {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" onclick="showSection('main-content', 'hero')">OW Floricultura</a>
+            <div style="display: flex; align-items: center;">
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#hero" class="nav-link" data-target-section="main-content" data-scroll-to="hero">Home</a></li>
+                        <li><a href="#catalogo" class="nav-link" data-target-section="main-content" data-scroll-to="catalogo">Paisagismo</a></li>
+                        <li><a href="#servicos" class="nav-link" data-target-section="main-content" data-scroll-to="servicos">Serviços</a></li>
+                        <li><a href="#sobre" class="nav-link" data-target-section="main-content" data-scroll-to="sobre">Sobre Nós</a></li>
+                        <li><a href="#projetos" class="nav-link" data-target-section="main-content" data-scroll-to="projetos">Projetos</a></li><li><a href="#contato" class="nav-link" data-target-section="main-content" data-scroll-to="contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <button id="darkModeToggle" class="dark-mode-toggle">
+                    ☀️
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="main-content-wrapper">
+        <main class="main-content" id="main-content">
+            <section class="hero" id="hero">
+                <div class="hero-content">
+                    <h1>Cultivando Sonhos Verdes por Gerações: Seu Espaço, Nossa Paixão.</h1>
+                    <p>Na OW Floricultura, transformamos ambientes com a beleza e vitalidade das plantas. Soluções completas em paisagismo, irrigação e manutenção para residências e empresas.</p>
+                    <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">Descubra Nossas Soluções</button>
+                </div>
+            </section>
+
+            <section id="catalogo" class="catalog-overview container">
+                <h2 class="section-title">Nossas Soluções em Paisagismo</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="imagens/jardim-residencial-placeholder.jpg" alt="Jardim Residencial">
+                        <h3>Jardim Residencial</h3>
+                        <p>Desenvolvemos projetos únicos para transformar sua casa em um refúgio verde, desde pequenos espaços a grandes áreas de lazer. Nossa expertise em paisagismo residencial garante a criação de um ambiente que não apenas embeleza, mas também proporciona bem-estar e tranquilidade para toda a família. Cuidamos de cada detalhe, desde a seleção das plantas até a disposição de elementos decorativos, resultando em um jardim que é a extensão perfeita do seu lar.</p>
+                        <button class="btn-secondary" onclick="showSection('jardim-residencial-detail')">Saiba Mais</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="imagens/jardim-empresarial-placeholder.jpg" alt="Jardim Empresarial">
+                        <h3>Jardim Empresarial</h3>
+                        <p>Criamos ambientes corporativos que inspiram produtividade e bem-estar, com paisagismo funcional e esteticamente agradável. Nossos projetos para jardins empresariais visam harmonizar o ambiente de trabalho, trazendo a natureza para dentro ou para as áreas externas da sua empresa. Um paisagismo bem planejado melhora a qualidade do ar, reduz o estresse e eleva a percepção de valor da sua marca, criando um espaço mais convidativo e produtivo para colaboradores e clientes.</p>
+                        <button class="btn-secondary" onclick="showSection('jardim-empresarial-detail')">Saiba Mais</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="imagens/jardim-vertical-minimalista.jpg" alt="Jardim Vertical Minimalista">
+                        <h3>Jardins Verticais</h3>
+                        <p>Soluções inovadoras para otimizar espaços e trazer o verde para paredes e fachadas, com design e funcionalidade. Os jardins verticais são a resposta perfeita para ambientes urbanos e espaços limitados, transformando muros sem vida em verdadeiras obras de arte naturais. Além da beleza, eles proporcionam benefícios como melhora da qualidade do ar, isolamento térmico e acústico, e uma conexão mais profunda com a natureza, mesmo em centros urbanos. Nossos sistemas são eficientes e de fácil manutenção.</p>
+                        <button class="btn-secondary" onclick="showSection('jardim-vertical-detail')">Saiba Mais</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="imagens/piscina-natural-placeholder.jpg" alt="Piscina Natural">
+                        <h3>Piscina Natural</h3>
+                        <p>Construímos piscinas naturais ecológicas e de baixa manutenção, que se integram perfeitamente à paisagem do seu jardim, fornecendo um ecossistema equilibrado para um ambiente puro. Esqueça o cloro e os produtos químicos! Nossas piscinas naturais utilizam um sistema de filtragem biológica que mantém a água limpa e cristalina de forma sustentável, criando um ecossistema equilibrado que é um convite ao relaxamento e à reconexão com a natureza. Uma experiência de nado única e saudável, em perfeita harmonia com o ambiente.</p>
+                        <button class="btn-secondary" onclick="showSection('piscina-natural-detail')">Saiba Mais</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="imagens/lago-ornamental-placeholder.jpg" alt="Lago Ornamental">
+                        <h3>Lago Ornamental</h3>
+                        <p>Desenvolvemos e instalamos lagos ornamentais deslumbrantes, que se tornam o ponto focal do seu jardim, atraindo vida selvagem e serenidade. Um lago ornamental é mais do que um elemento decorativo; é um ecossistema vivo que traz tranquilidade e beleza para o seu espaço. Com design personalizado e sistemas de filtragem eficientes, garantimos um ambiente aquático saudável e de fácil manutenção, perfeito para peixes, plantas aquáticas e momentos de contemplação.</p>
+                        <button class="btn-secondary" onclick="showSection('lago-ornamental-detail')">Saiba Mais</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="imagens/irrigacao-automatica-placeholder.jpg" alt="Sistema de Irrigação Automática">
+                        <h3>Irrigação Inteligente</h3>
+                        <p>Sistemas de irrigação automatizados e eficientes que garantem a saúde do seu jardim com o mínimo de desperdício de água. Com nossas soluções de irrigação inteligente, seu jardim receberá a quantidade exata de água de que precisa, no momento certo, otimizando o uso dos recursos hídricos e garantindo a saúde e a exuberância das suas plantas. Nossos sistemas são programáveis e podem ser controlados remotamente, proporcionando praticidade e economia.</p>
+                        <button class="btn-secondary" onclick="showSection('irrigacao-inteligente-detail')">Saiba Mais</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="servicos" class="services-overview container">
+                <h2 class="section-title">Nossos Nossos Serviços Especializados</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <img src="imagens/plantio.png" alt="Icone de Plantio">
+                        <h3>Plantio e Transplante</h3>
+                        <p>Especialistas em plantio e transplante de árvores, arbustos e flores, garantindo o sucesso e a beleza do seu jardim.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="imagens/manutencao.png" alt="Icone de Manutenção">
+                        <h3>Manutenção de Jardins</h3>
+                        <p>Serviços completos de manutenção, incluindo poda, adubação, controle de pragas e doenças, para um jardim sempre exuberante.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="imagens/iluminacao.png" alt="Icone de Iluminação">
+                        <h3>Iluminação de Jardins</h3>
+                        <p>Projetos de iluminação que destacam a beleza do seu paisagismo e criam ambientes acolhedores e seguros à noite.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="imagens/deck.png" alt="Icone de Deck">
+                        <h3>Construção de Decks e Pergolados</h3>
+                        <p>Construção de estruturas de madeira personalizadas que complementam seu jardim, criando áreas de convivência charmosas.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="imagens/consultoria.png" alt="Icone de Consultoria">
+                        <h3>Consultoria Paisagística</h3>
+                        <p>Orientação profissional para otimizar seu espaço, escolher as plantas certas e planejar o jardim dos seus sonhos.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="imagens/fontes.png" alt="Icone de Fontes e Cascatas">
+                        <h3>Fontes e Cascatas</h3>
+                        <p>Instalação de fontes e cascatas que adicionam o som relaxante da água e um toque de elegância ao seu ambiente.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sobre" class="about-us container">
+                <h2 class="section-title">Sobre Nós</h2>
+                <div class="about-content">
+                    <img src="imagens/about-us-placeholder.jpg" alt="Nossa Equipe Trabalhando" class="about-image">
+                   <p>Na OW Floricultura, nosso trabalho é mais do que cultivar plantas; é cultivar sonhos. Somos uma empresa de família, com uma história que floresce desde 1996, passada por gerações que compartilham um profundo amor pelas plantas. Acreditamos que o verde transforma, inspira e revitaliza, e é essa paixão que impulsiona cada um de nossos projetos. Nosso compromisso é com a excelência e a satisfação do cliente, buscando sempre as melhores soluções para cada espaço.</p>
+                    <p>Com um olhar estratégico e expertise consolidada, somos focados no ramo empresarial sendo a escolha de confiança para arquitetos e construtoras que buscam excelência em soluções paisagísticas integradas. Da mesma forma, levamos essa paixão e qualidade para casas populares, de médio e alto padrão, criando jardins que encantam e se adaptam à individualidade de cada lar. Nossa equipe é composta por profissionais altamente qualificados e apaixonados por transformar ideias em realidade verde.</p>
+                    <p>Somos especializados em projetos paisagísticos completos, desde o conceito inicial até a execução impecável. Nossa expertise se estende à implementação de sistemas de irrigação inteligentes e sustentáveis, e à manutenção de jardins para garantir a perenidade e a beleza de cada ambiente. Convidamos você a conhecer o trabalho de uma família que respira a natureza e faz dela uma arte para o seu espaço. Venha descobrir como podemos juntos criar o jardim dos seus sonhos, um verdadeiro oásis de tranquilidade e beleza.</p>
+
+                </div>
+            </section>
+
+            <section id="projetos" class="projects-overview container">
+                <h2 class="section-title">Alguns de Nossos Projetos</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="imagens/projeto-1.jpg" alt="Projeto de Paisagismo 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagens/projeto-2.jpg" alt="Projeto de Paisagismo 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagens/projeto-3.jpg" alt="Projeto de Paisagismo 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagens/projeto-4.jpg" alt="Projeto de Paisagismo 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagens/projeto-5.jpg" alt="Projeto de Paisagismo 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imagens/projeto-6.jpg" alt="Projeto de Paisagismo 6">
+                    </div>
+                </div>
+            </section>
+            <section id="contato" class="contact-section container">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p><strong>OW Floricultura:</strong> <br> Paisagismo, Irrigação e Jardins</p>
+                        <p>Estamos prontos para atender você e transformar seu espaço em um verdadeiro oásis. Use o formulário ou os canais abaixo para falar conosco.</p>
+                        <p><strong>Telefone:</strong> <br> (41) 8860-2635</p>
+                        <p><strong>Email:</strong> <br> contato@owfloricultura.com.br</p>
+                        <p><strong>Endereço:</strong> <br> Rua Marechal Deodoro, 135 - Jardim Amélia, Pinhais - PR</p>
+                        
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.13889946323!2d-49.16071988228646!3d-25.43361939563854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcee356e4b4d2d%3A0xa8325d07b6f3ced3!2sR.%20Mal.%20Deodoro%2C%20135%20-%20Jardim%20Am%C3%A9lia%2C%20Pinhais%20-%20PR%2C%2083330-140!5e0!3m2!1sen!2sbr!4v1751074973820!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <a href="https://api.whatsapp.com/send?phone=554188602635&text=Olá! Gostaria de mais informações sobre os serviços da OW Floricultura." target="_blank" class="btn-whatsapp">
+                            <span style="font-size: 1.2em;">✉️</span> Fale Conosco pelo WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/owfloricultura/" target="_blank" class="btn-instagram">
+                            <span style="font-size: 1.2em;">📸</span> Visite nosso Instagram
+                        </a>
+                    </div>
+                    <form action="https://formspree.io/f/xovwynvq" method="POST" class="contact-form">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                        <input type="email" name="email" placeholder="Seu Email" required>
+                        <input type="tel" name="phone" placeholder="Seu Telefone (Opcional)">
+                        <textarea name="message" placeholder="Sua Mensagem" rows="6" required></textarea>
+                        <button type="submit">Enviar Mensagem</button>
+                        <div id="form-status-message"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <section id="jardim-residencial-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/jardim-residencial-placeholder.jpg" alt="Detalhe de Jardim Residencial" class="detail-image">
+            <div class="detail-info">
+                <h1>Jardim Residencial: Seu Refúgio Verde</h1>
+                <p>Na OW Floricultura, transformamos seu espaço em um santuário pessoal. Projetamos jardins residenciais que não apenas realçam a beleza da sua casa, mas também criam ambientes de relaxamento e convívio para você e sua família. Do design inicial à seleção de plantas e elementos decorativos, cada detalhe é pensado para refletir seu estilo e necessidades.</p>
+                <ul>
+                    <li>Design personalizado e funcional</li>
+                    <li>Seleção de plantas ideais para o clima local</li>
+                    <li>Criação de espaços de lazer e contemplação</li>
+                    <li>Manutenção e cuidados contínuos</li>
+                </ul>
+                <p>Nossa equipe de paisagistas experientes garante que seu jardim seja um oásis de tranquilidade e beleza, que cresce e prospera ao longo do tempo.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('jardim-empresarial-detail')">Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jardim-empresarial-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/jardim-empresarial-placeholder.jpg" alt="Detalhe de Jardim Empresarial" class="detail-image">
+            <div class="detail-info">
+                <h1>Jardim Empresarial: Espaços que Inspiram</h1>
+                <p>Um ambiente corporativo bem cuidado com paisagismo de qualidade eleva a imagem da sua empresa, promove o bem-estar dos colaboradores e impressiona clientes. Nossos projetos de jardim empresarial são pensados para aliar estética e funcionalidade, criando espaços verdes que transmitem profissionalismo e sustentabilidade.</p>
+                <ul>
+                    <li>Valorização da imagem corporativa</li>
+                    <li>Melhora do ambiente de trabalho</li>
+                    <li>Projetos de baixa manutenção e alto impacto visual</li>
+                    <li>Integração com a arquitetura do ambiente</li>
+                </ul>
+                <p>Desde grandes complexos a pequenos escritórios, transformamos seu espaço de trabalho em um local mais agradável e produtivo, refletindo a cultura da sua empresa.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('jardim-residencial-detail')">⬅️ Anterior</button>
+                        <button class="btn-primary" onclick="showSection('jardim-vertical-detail')">Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jardim-vertical-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/jardim-vertical-minimalista.jpg" alt="Detalhe de Jardim Vertical" class="detail-image">
+            <div class="detail-info">
+                <h1>Jardins Verticais: Natureza em Qualquer Espaço</h1>
+                <p>Os jardins verticais são a solução perfeita para quem busca trazer o verde para ambientes com espaço limitado. Seja em fachadas, muros ou interiores, criamos paredes verdes que são verdadeiras obras de arte, combinando design e os benefícios da natureza.</p>
+                <ul>
+                    <li>Otimização de espaços urbanos</li>
+                    <li>Melhora da qualidade do ar e isolamento térmico/acústico</li>
+                    <li>Design moderno e impactante</li>
+                    <li>Sistemas de irrigação eficientes e de baixa manutenção</li>
+                </ul>
+                <p>Leve a exuberância da natureza para sua casa ou empresa com um jardim vertical que encanta e transforma.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('jardim-empresarial-detail')">⬅️ Anterior</button>
+                        <button class="btn-primary" onclick="showSection('piscina-natural-detail')">Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="piscina-natural-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/piscina-natural-placeholder.jpg" alt="Detalhe de Piscina Natural" class="detail-image">
+            <div class="detail-info">
+                <h1>Piscina Natural: Sustentabilidade e Bem-estar</h1>
+                <p>Desfrute de uma experiência de nado única e ecologicamente correta com nossas piscinas naturais. Livre de cloro e produtos químicos, a água é purificada por um sistema biológico que integra a piscina ao ambiente do jardim, criando um ecossistema equilibrado e belo.</p>
+                <ul>
+                    <li>Água naturalmente purificada e cristalina</li>
+                    <li>Integração perfeita com o paisagismo</li>
+                    <li>Baixa manutenção e sem uso de químicos</li>
+                    <li>Um convite ao relaxamento e à reconexão com a natureza</li>
+                </ul>
+                <p>Uma alternativa saudável e sustentável às piscinas convencionais, ideal para quem busca harmonia com o meio ambiente.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('jardim-vertical-detail')">⬅️ Anterior</button>
+                        <button class="btn-primary" onclick="showSection('lago-ornamental-detail')">Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lago-ornamental-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/lago-ornamental-placeholder.jpg" alt="Detalhe de Lago Ornamental" class="detail-image">
+            <div class="detail-info">
+                <h1>Lago Ornamental: Serenidade e Vida no Seu Jardim</h1>
+                <p>Criamos lagos ornamentais deslumbrantes que se tornam o coração do seu jardim, atraindo pássaros e outras formas de vida, e proporcionando um ambiente de profunda tranquilidade. Com design personalizado e sistemas de filtragem biológica, garantimos um ecossistema aquático vibrante e de fácil cuidado.</p>
+                <ul>
+                    <li>Design que complementa o paisagismo existente</li>
+                    <li>Sistemas de filtragem biológica eficientes</li>
+                    <li>Criação de habitat para fauna e flora aquática</li>
+                    <li>Manutenção simplificada</li>
+                </ul>
+                <p>Um elemento de beleza e calma que transforma seu espaço exterior em um refúgio natural.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('piscina-natural-detail')">⬅️ Anterior</button>
+                        <button class="btn-primary" onclick="showSection('irrigacao-inteligente-detail')">Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="irrigacao-inteligente-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/irrigacao-automatica-placeholder.jpg" alt="Detalhe de Irrigação Inteligente" class="detail-image">
+            <div class="detail-info">
+                <h1>Irrigação Inteligente: Eficiência e Sustentabilidade</h1>
+                <p>Garanta a saúde e a vitalidade do seu jardim com nossos sistemas de irrigação inteligentes. Utilizamos tecnologia avançada para fornecer a quantidade ideal de água para suas plantas, minimizando o desperdício e otimizando os recursos.</p>
+                <ul>
+                    <li>Sensores de umidade e programação adaptativa</li>
+                    <li>Economia de água e redução de custos</li>
+                    <li>Saúde ideal para suas plantas</li>
+                    <li>Instalação discreta e eficiente</li>
+                </ul>
+                <p>Com a irrigação inteligente, seu jardim estará sempre exuberante, com o mínimo esforço e o máximo de sustentabilidade.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('lago-ornamental-detail')">⬅️ Anterior</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© OW Floricultura. Todos os direitos reservados.</p>
+            <p>Paisagismo | Irrigação | Jardins</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/owfloricultura/" target="_blank">
+                    <img src="imagens/instagram-icon.png" alt="Instagram">
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=554188602635" target="_blank">
+                    <img src="imagens/whatsapp-icon.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            const mainContent = document.getElementById('main-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            // Seleciona todas as seções principais e de detalhes para controlar a visibilidade
+            const allSections = document.querySelectorAll('#main-content, .detail-section'); 
+
+            // Função para alternar o modo escuro
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                // Salva a preferência do usuário
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.textContent = '🌙'; // Ícone para modo escuro
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeToggle.textContent = '☀️'; // Ícone para modo claro
+                }
+            });
+
+            // Verifica a preferência do usuário ao carregar a página
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = '🌙';
+            } else {
+                darkModeToggle.textContent = '☀️';
+            }
+
+            // Função para mostrar a seção correta e esconder as outras
+            window.showSection = function(sectionIdToShow, scrollToElementId = null) {
+                // Esconde todas as seções primeiro
+                allSections.forEach(section => {
+                    section.classList.remove('active'); 
+                    section.classList.add('hidden'); 
+                });
+
+                // Mostra a seção desejada
+                const targetSection = document.getElementById(sectionIdToShow);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden'); 
+                    // Força um reflow para garantir que a transição seja aplicada corretamente
+                    void targetSection.offsetWidth; 
+                    targetSection.classList.add('active'); 
+                }
+
+                // Remove a classe 'active' de todos os links de navegação
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Adiciona a classe 'active' ao link de navegação correspondente se for uma seção principal
+                // E também cuida do scroll para a âncora dentro da main-content
+                if (sectionIdToShow === 'main-content' && scrollToElementId) {
+                    navLinks.forEach(link => {
+                        if (link.dataset.targetSection === 'main-content' && link.dataset.scrollTo === scrollToElementId) {
+                            link.classList.add('active');
+                        }
+                    });
+                    // Rola para o elemento específico dentro da main-content após um pequeno delay
+                    setTimeout(() => {
+                        const elementToScroll = document.getElementById(scrollToElementId); 
+                        if (elementToScroll) {
+                            elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100); // Pequeno delay para a transição da seção
+                } else if (sectionIdToShow !== 'main-content') {
+                     // Se for uma seção de detalhes, nenhum link de navegação principal deve estar ativo
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    window.scrollTo(0, 0); // Rola para o topo da página ao exibir uma seção de detalhes
+                }
+            };
+
+
+            // Event listeners para os links de navegação
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Impede o comportamento padrão do link de âncora
+                    const targetSectionId = this.dataset.targetSection;
+                    const scrollToId = this.dataset.scrollTo;
+                    showSection(targetSectionId, scrollToId);
+                });
+            });
+
+            // Adiciona evento para o formulário de contato
+            const contactForm = document.querySelector('.contact-form');
+            const formStatusMessage = document.getElementById('form-status-message');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(event) {
+                    event.preventDefault();
+                    formStatusMessage.classList.remove('visible', 'success', 'error'); // Limpa classes
+
+                    const formData = new FormData(contactForm);
+                    try {
+                        const response = await fetch(contactForm.action, {
+                            method: contactForm.method,
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            formStatusMessage.textContent = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
+                            formStatusMessage.classList.add('success', 'visible');
+                            contactForm.reset(); // Limpa o formulário
+                        } else {
+                            const errorData = await response.json();
+                            let errorMessage = 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.';
+                            if (errorData && errorData.errors && errorData.errors.length > 0) {
+                                errorMessage = errorData.errors.map(err => err.message).join(', ');
+                            }
+                            formStatusMessage.textContent = errorMessage;
+                            formStatusMessage.classList.remove('success');
+                            formStatusMessage.classList.add('error', 'visible');
+                        }
+                    } catch (error) {
+                        formStatusMessage.textContent = 'Erro de conexão. Verifique sua internet ou tente novamente mais tarde.';
+                        formStatusMessage.classList.remove('success');
+                        formStatusMessage.classList.add('error', 'visible');
+                    }
+
+                    // Esconde a mensagem após alguns segundos
+                    setTimeout(() => {
+                        formStatusMessage.classList.remove('visible');
+                    }, 5000); // 5 segundos
+                });
+            }
+
+            // Inicializa a visibilidade da seção principal ao carregar a página
+            // Isso garante que a "Home" esteja sempre visível ao carregar o site
+            showSection('main-content', 'hero');
+            // Garante que a barra de rolagem esteja no topo absoluto ao carregar a página
+            window.scrollTo(0, 0); 
+        });
+    </script>
+</body>
+</html>
