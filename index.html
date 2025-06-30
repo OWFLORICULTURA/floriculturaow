@@ -1144,6 +1144,147 @@
                 font-size: 2em;
             }
         }
+
+        /* Fixed Contact Buttons */
+        .fixed-contact-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1001; /* Garante que os botões fiquem acima de outros elementos como o cabeçalho */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            pointer-events: none; /* Permite que o clique passe através do container se não for nos botões */
+        }
+        .fixed-contact-buttons a {
+            pointer-events: auto; /* Reabilita o clique nos próprios botões */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Alinha texto e ícone à esquerda */
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            white-space: nowrap; /* Impede que o texto quebre para a próxima linha */
+            font-size: 1em; /* Tamanho da fonte padrão */
+            min-width: unset; /* Remove largura mínima/máxima que podem ter sido herdadas */
+            max-width: unset;
+            width: auto; /* Ajusta a largura ao conteúdo */
+        }
+        .fixed-contact-buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Estilos específicos para o botão WhatsApp fixo */
+        .fixed-contact-buttons .btn-whatsapp {
+            background-color: #25D366; /* Verde WhatsApp */
+            color: #ffffff;
+        }
+        .fixed-contact-buttons .btn-whatsapp:hover {
+            background-color: #1DA851; /* Verde mais escuro no hover */
+        }
+        .fixed-contact-buttons .whatsapp-icon {
+            fill: none;
+            stroke: currentColor; /* Usa a cor do texto do botão */
+            stroke-width: ;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-right: 10px; /* Espaço entre o ícone e o texto */
+        }
+
+        /* Estilos específicos para o botão Instagram fixo */
+        .fixed-contact-buttons .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); /* Gradiente Instagram */
+            color: #ffffff;
+        }
+        .fixed-contact-buttons .btn-instagram:hover {
+            opacity: 0.9;
+        }
+        .fixed-contact-buttons .instagram-icon {
+            fill: none;
+            stroke: currentColor; /* Usa a cor do texto do botão */
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-right: 10px; /* Espaço entre o ícone e o texto */
+        }
+
+        /* Ajustes de responsividade para os botões fixos */
+        @media (max-width: 768px) {
+            .fixed-contact-buttons {
+                bottom: 15px;
+                left: 15px;
+                gap: 10px;
+            }
+            .fixed-contact-buttons a {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+        }
+		
+.fixed-contact-buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Espaço entre os botões */
+}
+
+.fixed-contact-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+  max-width: 300px;
+  color: white;
+  text-decoration: none;
+  gap: 10px;
+}
+
+/* WhatsApp */
+.fixed-contact-buttons .btn-whatsapp {
+  background-color: #25D366;
+}
+.fixed-contact-buttons .btn-whatsapp:hover {
+  background-color: #1DA851;
+  transform: translateY(-2px);
+}
+.fixed-contact-buttons .whatsapp-icon {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+/* Instagram */
+.fixed-contact-buttons .btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+.fixed-contact-buttons .btn-instagram:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.fixed-contact-buttons .instagram-icon {
+  width: 30px;
+  height: 30px;
+  stroke: white;
+}
+
+
+
+		
     </style>
 </head>
 <body>
@@ -1154,6 +1295,7 @@
                 <nav class="nav">
                     <ul>
                         <li><a href="#hero" class="nav-link" data-target-section="main-content" data-scroll-to="hero">Home</a></li>
+						<li><a href="#especialidade" class="nav-link" data-target-section="main-content" data-scroll-to="especialidades">Especialidades</a></li>
                         <li><a href="#catalogo" class="nav-link" data-target-section="main-content" data-scroll-to="catalogo">Paisagismo</a></li>
                         <li><a href="#servicos" class="nav-link" data-target-section="main-content" data-scroll-to="servicos">Serviços</a></li>
                         <li><a href="#sobre" class="nav-link" data-target-section="main-content" data-scroll-to="sobre">Sobre Nós</a></li>
@@ -1177,8 +1319,29 @@
                 </div>
             </section>
 
+ <section id="especialidades" class="catalog-overview">
+            <div class="container">
+                <h2 class="section-title">Nossas Especialidades</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="imagens/jardim-vertical-minimalista.jpg" alt="Jardins Verticais">
+                        <h3>Jardins Verticais</h3>
+                        <p>Otimize espaços e traga a natureza para ambientes urbanos com nossos jardins verticais personalizados. Soluções inovadoras para beleza e bem-estar.</p>
+                        <a href="#" class="btn-secondary" onclick="showSection('jardim-vertical-detail')">Saiba Mais</a>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="imagens/irrigacao-automatica-placeholder.jpg" alt="Irrigação Inteligente">
+                        <h3>Irrigação Inteligente</h3>
+                        <p>Sistemas automatizados que economizam água e garantem a saúde de suas plantas. Tecnologia a favor da sustentabilidade.</p>
+                        <a href="#" class="btn-secondary" onclick="showSection('irrigacao-inteligente-detail')">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+		
             <section id="catalogo" class="catalog-overview container">
-                <h2 class="section-title">Nossas Soluções em Paisagismo</h2>
+                <h2 class="section-title">Serviços de Paisagismos</h2>
                 <div class="product-grid">
                     <div class="product-card">
                         <img src="imagens/jardim-residencial-placeholder.jpg" alt="Jardim Residencial">
@@ -1195,13 +1358,6 @@
                     </div>
 
                     <div class="product-card">
-                        <img src="imagens/jardim-vertical-minimalista.jpg" alt="Jardim Vertical Minimalista">
-                        <h3>Jardins Verticais</h3>
-                        <p>Soluções inovadoras para otimizar espaços e trazer o verde para paredes e fachadas, com design e funcionalidade. Os jardins verticais são a resposta perfeita para ambientes urbanos e espaços limitados, transformando muros sem vida em verdadeiras obras de arte naturais. Além da beleza, eles proporcionam benefícios como melhora da qualidade do ar, isolamento térmico e acústico, e uma conexão mais profunda com a natureza, mesmo em centros urbanos. Nossos sistemas são eficientes e de fácil manutenção.</p>
-                        <button class="btn-secondary" onclick="showSection('jardim-vertical-detail')">Saiba Mais</button>
-                    </div>
-
-                    <div class="product-card">
                         <img src="imagens/piscina-natural-placeholder.jpg" alt="Piscina Natural">
                         <h3>Piscina Natural</h3>
                         <p>Construímos piscinas naturais ecológicas e de baixa manutenção, que se integram perfeitamente à paisagem do seu jardim, fornecendo um ecossistema equilibrado para um ambiente puro. Esqueça o cloro e os produtos químicos! Nossas piscinas naturais utilizam um sistema de filtragem biológica que mantém a água limpa e cristalina de forma sustentável, criando um ecossistema equilibrado que é um convite ao relaxamento e à reconexão com a natureza. Uma experiência de nado única e saudável, em perfeita harmonia com o ambiente.</p>
@@ -1213,13 +1369,6 @@
                         <h3>Lago Ornamental</h3>
                         <p>Desenvolvemos e instalamos lagos ornamentais deslumbrantes, que se tornam o ponto focal do seu jardim, atraindo vida selvagem e serenidade. Um lago ornamental é mais do que um elemento decorativo; é um ecossistema vivo que traz tranquilidade e beleza para o seu espaço. Com design personalizado e sistemas de filtragem eficientes, garantimos um ambiente aquático saudável e de fácil manutenção, perfeito para peixes, plantas aquáticas e momentos de contemplação.</p>
                         <button class="btn-secondary" onclick="showSection('lago-ornamental-detail')">Saiba Mais</button>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="imagens/irrigacao-automatica-placeholder.jpg" alt="Sistema de Irrigação Automática">
-                        <h3>Irrigação Inteligente</h3>
-                        <p>Sistemas de irrigação automatizados e eficientes que garantem a saúde do seu jardim com o mínimo de desperdício de água. Com nossas soluções de irrigação inteligente, seu jardim receberá a quantidade exata de água de que precisa, no momento certo, otimizando o uso dos recursos hídricos e garantindo a saúde e a exuberância das suas plantas. Nossos sistemas são programáveis e podem ser controlados remotamente, proporcionando praticidade e economia.</p>
-                        <button class="btn-secondary" onclick="showSection('irrigacao-inteligente-detail')">Saiba Mais</button>
                     </div>
                 </div>
             </section>
@@ -1299,7 +1448,7 @@
                 <div class="contact-content">
                     <div class="contact-info">
                         <p><strong>OW Floricultura:</strong> <br> Paisagismo, Irrigação e Jardins</p>
-                        <p>Estamos prontos para atender você e transformar seu espaço em um verdadeiro oásis. Use o formulário ou os canais abaixo para falar conosco.</p>
+                        <p>Estamos prontos para atender você e transformar seu espaço em um verdadeiro oásis.</p>
                         <p><strong>Telefone:</strong> <br> (41) 8860-2635</p>
                         <p><strong>Email:</strong> <br> contato@owfloricultura.com.br</p>
                         <p><strong>Endereço:</strong> <br> Rua Marechal Deodoro, 135 - Jardim Amélia, Pinhais - PR</p>
@@ -1307,13 +1456,6 @@
                         <div class="map-container">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.13889946323!2d-49.16071988228646!3d-25.43361939563854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcee356e4b4d2d%3A0xa8325d07b6f3ced3!2sR.%20Mal.%20Deodoro%2C%20135%20-%20Jardim%20Am%C3%A9lia%2C%20Pinhais%20-%20PR%2C%2083330-140!5e0!3m2!1sen!2sbr!4v1751074973820!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-
-                        <a href="https://api.whatsapp.com/send?phone=554188602635&text=Olá! Gostaria de mais informações sobre os serviços da OW Floricultura." target="_blank" class="btn-whatsapp">
-                            <span style="font-size: 1.2em;">✉️</span> Fale Conosco pelo WhatsApp
-                        </a>
-                        <a href="https://www.instagram.com/owfloricultura/" target="_blank" class="btn-instagram">
-                            <span style="font-size: 1.2em;">📸</span> Visite nosso Instagram
-                        </a>
                     </div>
                     <form action="https://formspree.io/f/xovwynvq" method="POST" class="contact-form">
                         <input type="text" name="name" placeholder="Seu Nome" required>
@@ -1327,6 +1469,58 @@
             </section>
         </main>
     </div>
+	
+			<section id="jardim-vertical-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/jardim-vertical-minimalista.jpg" alt="Detalhe de Jardim Vertical" class="detail-image">
+            <div class="detail-info">
+                <h1>Jardins Verticais: Natureza em Qualquer Espaço</h1>
+                <p>Os jardins verticais são a solução perfeita para quem busca trazer o verde para ambientes com espaço limitado. Seja em fachadas, muros ou interiores, criamos paredes verdes que são verdadeiras obras de arte, combinando design e os benefícios da natureza.</p>
+                <ul>
+                    <li>Otimização de espaços urbanos</li>
+                    <li>Melhora da qualidade do ar e isolamento térmico/acústico</li>
+                    <li>Design moderno e impactante</li>
+                    <li>Sistemas de irrigação eficientes e de baixa manutenção</li>
+                </ul>
+                <p>Leve a exuberância da natureza para sua casa ou empresa com um jardim vertical que encanta e transforma.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'especialidades')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('irrigacao-inteligente-detail')">Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="irrigacao-inteligente-detail" class="detail-section container">
+        <div class="detail-content">
+            <img src="imagens/irrigacao-automatica-placeholder.jpg" alt="Detalhe de Irrigação Inteligente" class="detail-image">
+            <div class="detail-info">
+                <h1>Irrigação Inteligente: Eficiência e Sustentabilidade</h1>
+                <p>Garanta a saúde e a vitalidade do seu jardim com nossos sistemas de irrigação inteligentes. Utilizamos tecnologia avançada para fornecer a quantidade ideal de água para suas plantas, minimizando o desperdício e otimizando os recursos.</p>
+                <ul>
+                    <li>Sensores de umidade e programação adaptativa</li>
+                    <li>Economia de água e redução de custos</li>
+                    <li>Saúde ideal para suas plantas</li>
+                    <li>Instalação discreta e eficiente</li>
+                </ul>
+                <p>Com a irrigação inteligente, seu jardim estará sempre exuberante, com o mínimo esforço e o máximo de sustentabilidade.</p>
+                <div class="detail-navigation-buttons">
+                    <div class="button-group-top">
+                        <button class="btn-primary" onclick="showSection('main-content', 'especialidades')">🏠 Voltar ao Catálogo</button>
+                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                    </div>
+                    <div class="button-group-bottom">
+                        <button class="btn-primary" onclick="showSection('jardim-vertical-detail')">⬅️ Anterior</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="jardim-residencial-detail" class="detail-section container">
         <div class="detail-content">
@@ -1374,33 +1568,6 @@
                     </div>
                     <div class="button-group-bottom">
                         <button class="btn-primary" onclick="showSection('jardim-residencial-detail')">⬅️ Anterior</button>
-                        <button class="btn-primary" onclick="showSection('jardim-vertical-detail')">Próximo ➡️</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="jardim-vertical-detail" class="detail-section container">
-        <div class="detail-content">
-            <img src="imagens/jardim-vertical-minimalista.jpg" alt="Detalhe de Jardim Vertical" class="detail-image">
-            <div class="detail-info">
-                <h1>Jardins Verticais: Natureza em Qualquer Espaço</h1>
-                <p>Os jardins verticais são a solução perfeita para quem busca trazer o verde para ambientes com espaço limitado. Seja em fachadas, muros ou interiores, criamos paredes verdes que são verdadeiras obras de arte, combinando design e os benefícios da natureza.</p>
-                <ul>
-                    <li>Otimização de espaços urbanos</li>
-                    <li>Melhora da qualidade do ar e isolamento térmico/acústico</li>
-                    <li>Design moderno e impactante</li>
-                    <li>Sistemas de irrigação eficientes e de baixa manutenção</li>
-                </ul>
-                <p>Leve a exuberância da natureza para sua casa ou empresa com um jardim vertical que encanta e transforma.</p>
-                <div class="detail-navigation-buttons">
-                    <div class="button-group-top">
-                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
-                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
-                    </div>
-                    <div class="button-group-bottom">
-                        <button class="btn-primary" onclick="showSection('jardim-empresarial-detail')">⬅️ Anterior</button>
                         <button class="btn-primary" onclick="showSection('piscina-natural-detail')">Próximo ➡️</button>
                     </div>
                 </div>
@@ -1427,7 +1594,7 @@
                         <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
                     </div>
                     <div class="button-group-bottom">
-                        <button class="btn-primary" onclick="showSection('jardim-vertical-detail')">⬅️ Anterior</button>
+                        <button class="btn-primary" onclick="showSection('jardim-empresarial-detail')">⬅️ Anterior</button>
                         <button class="btn-primary" onclick="showSection('lago-ornamental-detail')">Próximo ➡️</button>
                     </div>
                 </div>
@@ -1455,33 +1622,6 @@
                     </div>
                     <div class="button-group-bottom">
                         <button class="btn-primary" onclick="showSection('piscina-natural-detail')">⬅️ Anterior</button>
-                        <button class="btn-primary" onclick="showSection('irrigacao-inteligente-detail')">Próximo ➡️</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="irrigacao-inteligente-detail" class="detail-section container">
-        <div class="detail-content">
-            <img src="imagens/irrigacao-automatica-placeholder.jpg" alt="Detalhe de Irrigação Inteligente" class="detail-image">
-            <div class="detail-info">
-                <h1>Irrigação Inteligente: Eficiência e Sustentabilidade</h1>
-                <p>Garanta a saúde e a vitalidade do seu jardim com nossos sistemas de irrigação inteligentes. Utilizamos tecnologia avançada para fornecer a quantidade ideal de água para suas plantas, minimizando o desperdício e otimizando os recursos.</p>
-                <ul>
-                    <li>Sensores de umidade e programação adaptativa</li>
-                    <li>Economia de água e redução de custos</li>
-                    <li>Saúde ideal para suas plantas</li>
-                    <li>Instalação discreta e eficiente</li>
-                </ul>
-                <p>Com a irrigação inteligente, seu jardim estará sempre exuberante, com o mínimo esforço e o máximo de sustentabilidade.</p>
-                <div class="detail-navigation-buttons">
-                    <div class="button-group-top">
-                        <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
-                        <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
-                    </div>
-                    <div class="button-group-bottom">
-                        <button class="btn-primary" onclick="showSection('lago-ornamental-detail')">⬅️ Anterior</button>
                     </div>
                 </div>
             </div>
@@ -1639,5 +1779,23 @@
             window.scrollTo(0, 0); 
         });
     </script>
-</body>
+  <div class="fixed-contact-buttons">
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/554188602635?text=Olá%2C%20gostaria%20de%20um%20orçamento%20com%20a%20OW%20Floricultura!" target="_blank" class="btn-whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="whatsapp-icon" viewBox="0 0 30 30" fill="white">
+      <path d="M16.041 2.667c-7.317 0-13.25 5.934-13.25 13.25 0 2.338.617 4.63 1.783 6.658L2.667 29.333l6.948-1.842a13.223 13.223 0 0 0 6.426 1.625c7.317 0 13.25-5.933 13.25-13.25s-5.933-13.25-13.25-13.25zm0 24.334c-2.033 0-4.028-.532-5.79-1.543l-.414-.243-4.12 1.093 1.103-4.01-.267-.422a10.543 10.543 0 1 1 9.488 5.125zm5.69-7.466c-.31-.155-1.837-.906-2.123-1.01-.286-.103-.494-.155-.703.155-.207.31-.807 1.01-.99 1.216-.182.207-.364.233-.674.078-.31-.156-1.306-.481-2.226-1.534-.823-.931-1.38-2.078-1.542-2.388-.162-.31-.017-.478.139-.632.143-.142.31-.363.465-.543.155-.181.207-.31.31-.517.103-.206.052-.388-.026-.543-.078-.155-.698-1.678-.956-2.306-.252-.604-.508-.521-.698-.53-.182-.009-.388-.012-.594-.012-.206 0-.543.078-.827.388-.284.31-1.095 1.067-1.095 2.6 0 1.533 1.12 3.015 1.276 3.222.155.207 2.194 3.353 5.328 4.7.744.322 1.323.515 1.77.661.744.238 1.424.206 1.96.127.597-.089 1.831-.748 2.093-1.47.257-.724.257-1.342.181-1.47-.078-.128-.284-.206-.597-.36z"/>
+    </svg>
+    Fazer orçamento via WhatsApp
+  </a>
+
+  <!-- Botão Instagram -->
+  <a href="https://www.instagram.com/owfloricultura" target="_blank" class="btn-instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+    Visite nosso Instagram
+  </a>
+</div>
 </html>
