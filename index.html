@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OW Floricultura: Soluções Sustentáveis</title>
+    <title>OW Soluções Sustentáveis</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&family=Oswald:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="imagens/favicon.png" type="image/png">
     <style>
@@ -221,7 +221,7 @@
             color: var(--text-color-dark);
             text-align: center;
             padding: 120px 20px;
-            margin-top: 80px;
+            margin-top: 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -287,6 +287,14 @@
             cursor: pointer;
             font-size: 1.1em;
         }
+		
+		.hero-buttons {
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    margin-top: 30px; 
+    align-items: center; 
+}
 
         .btn-primary:hover {
             background-color: #6A994E;
@@ -1290,7 +1298,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <a href="#" class="logo" onclick="showSection('main-content', 'hero')">OW Floricultura</a>
+            <a href="#" class="logo" onclick="showSection('main-content', 'hero')">OW Soluções Sustentáveis</a>
             <div style="display: flex; align-items: center;">
                 <nav class="nav">
                     <ul>
@@ -1310,14 +1318,16 @@
     </header>
 
     <div id="main-content-wrapper">
-        <main class="main-content" id="main-content">
-            <section class="hero" id="hero">
-                <div class="hero-content">
-                    <h1>Cultivando Sonhos Verdes por Gerações: Seu Espaço, Nossa Paixão.</h1>
-                    <p>Na OW Floricultura, transformamos ambientes com a beleza e vitalidade das plantas. Soluções completas em paisagismo, irrigação e manutenção para residências e empresas.</p>
+    <main class="main-content" id="main-content">
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1>OW: Uma solução para o seu desejo!</h1>
+                <div class="hero-buttons"> <button class="btn-primary" onclick="showSection('main-content', 'especialidades')">Descubra Nossas Especialidades</button>
                     <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">Descubra Nossas Soluções</button>
-                </div>
-            </section>
+                </div> </div>
+        </section>
+    </main>
+</div>
 
  <section id="especialidades" class="catalog-overview">
             <div class="container">
@@ -1369,6 +1379,13 @@
                         <h3>Lago Ornamental</h3>
                         <p>Desenvolvemos e instalamos lagos ornamentais deslumbrantes, que se tornam o ponto focal do seu jardim, atraindo vida selvagem e serenidade. Um lago ornamental é mais do que um elemento decorativo; é um ecossistema vivo que traz tranquilidade e beleza para o seu espaço. Com design personalizado e sistemas de filtragem eficientes, garantimos um ambiente aquático saudável e de fácil manutenção, perfeito para peixes, plantas aquáticas e momentos de contemplação.</p>
                         <button class="btn-secondary" onclick="showSection('lago-ornamental-detail')">Saiba Mais</button>
+                    </div>
+					
+					 <div class="product-card">
+                        <img src="imagens/decks-placeholder.jpg" alt="Decks e Pergolados e Manutenções">
+                        <h3>Decks e Pergolados e Manutenções</h3>
+                        <p>Crie ambientes sofisticados e convidativos com nossos decks e pergolados feitos com madeiras nobres. Oferecemos instalação personalizada e manutenções que garantem beleza e durabilidade, valorizando seu espaço com elegância natural.</p>
+                        <button class="btn-secondary" onclick="showSection('decks-pergolados-detail')">Saiba Mais</button>
                     </div>
                 </div>
             </section>
@@ -1622,11 +1639,40 @@
                     </div>
                     <div class="button-group-bottom">
                         <button class="btn-primary" onclick="showSection('piscina-natural-detail')">⬅️ Anterior</button>
+						<button class="btn-primary" onclick="showSection('decks-pergolados-detail')">Próximo ➡️</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+	
+<section id="decks-pergolados-detail" class="detail-section container">
+    <div class="detail-content">
+        <img src="imagens/decks-placeholder.jpg" alt="Detalhe de Decks e Pergolados e Manutenções" class="detail-image">
+        <div class="detail-info">
+            <h1>Decks e Pergolados e Manutenções: Beleza e Durabilidade com Madeiras Nobres</h1>
+            <p>Os decks e pergolados de madeira são elementos que transformam qualquer ambiente, adicionando charme, aconchego e uma conexão natural. Na OW Soluções Sustentáveis, projetamos e instalamos essas estruturas que se integram perfeitamente ao seu paisagismo, utilizando **madeiras nobres** de origem sustentável e técnicas que garantem a longevidade da construção.</p>
+            <p>Além da criação, oferecemos serviços completos de manutenção, como limpeza especializada, tratamento, lixamento e aplicação de vernizes ou óleos protetores. Isso assegura que seu deck ou pergolado mantenha a beleza e resistência contra intempéries, valorizando seu imóvel por muitos anos.</p>
+            <ul>
+                <li>Design personalizado para áreas externas e internas</li>
+                <li>Utilização de **madeiras nobres** sustentáveis e de alta qualidade</li>
+                <li>Instalação profissional com foco em durabilidade</li>
+                <li>Serviços de manutenção preventiva e corretiva</li>
+                <li>Restauração de estruturas antigas, renovando seu visual</li>
+            </ul>
+            <p>Crie um ambiente convidativo e sofisticado com nossos decks e pergolados feitos com **madeiras nobres**, e mantenha-os impecáveis com nossos serviços especializados.</p>
+            <div class="detail-navigation-buttons">
+                <div class="button-group-top">
+                    <button class="btn-primary" onclick="showSection('main-content', 'catalogo')">🏠 Voltar ao Catálogo</button>
+                    <button class="btn-primary" onclick="showSection('main-content', 'contato')">💰 Solicitar Orçamento</button>
+                </div>
+                <div class="button-group-bottom">
+                    <button class="btn-primary" onclick="showSection('lago-ornamental-detail')">⬅️ Anterior</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
     <footer class="footer">
         <div class="container">
