@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Erro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #000000; /* Fundo preto */
+            font-family: Arial, sans-serif; /* Fonte normal */
+            color: #FFFFFF; /* Texto branco */
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .error-message {
+            font-size: 15vw; /* Tamanho do texto responsivo e gigante */
+            font-weight: bold;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); /* Pequena sombra para destaque */
+            animation: blink 0.15s infinite; /* Animação de piscar freneticamente */
+        }
+
+        /* Animação de piscar */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-message">
+        ERRO
+    </div>
+</body>
+</html>
